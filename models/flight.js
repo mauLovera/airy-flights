@@ -4,13 +4,13 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 // where models are created and their data types are specified
-const resourceSchema = new Schema({
+const flightSchema = new Schema({
   text: String,
   favorite: Boolean,
 })
 
-const Resource = mongoose.model('Skill', resourceSchema)
+const Flight = mongoose.model('Skill', flightSchema)
 
 export {
-  Resource
+  Flight
 }
