@@ -42,7 +42,7 @@ function addToList(req, res) {
     flight.meal.push(req.body.mealId)
     flight.save()
 		.then(() => {
-	    res.redirect(`flights/${flight._id}`)
+	    res.redirect(`/flights/${flight._id}`)
 		})
   })
   .catch(err => {
