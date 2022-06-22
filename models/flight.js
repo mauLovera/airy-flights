@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import { Meal } from "./meal.js"
 
 // shorthand
 const Schema = mongoose.Schema
@@ -49,9 +50,11 @@ const flightSchema = new Schema({
     },
   },
   tickets: [ticketSchema],
+  meal: [{type: Schema.Types.ObjectId, ref: 'Meal'}],
 })
 
 const Flight = mongoose.model('Skill', flightSchema)
+// Realised I didnt change the skill but wasn't sure if that would break the data
 
 export {
   Flight

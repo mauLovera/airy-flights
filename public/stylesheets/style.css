@@ -72,7 +72,6 @@ main {
   width: 95vw;
 
   padding-inline: .5em;
-  border-bottom: 1px solid white;
 }
 
 /* All Flights */
@@ -105,11 +104,13 @@ main {
 
 .content-header-title {
   font-size: 2em;
+  margin-bottom: 1em;
 }
 
 .content-body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
 
   height: 85%;
@@ -118,38 +119,103 @@ main {
   padding: 1em;
 }
 
+
 /* All Flights View */
 
 .all-flights-table {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  overflow: scroll;
+}
 
+.all-flights-table > * {
 }
 
 .all-flights-table th {
-  padding-inline: 1.2em;
+  padding: 2em 1.2em;
+  border-bottom: 1px solid white;
+
 }
 
 .all-flights-table td {
+  padding: 2em 1.2em;
+  border-bottom: 1px solid white;
+}
+
+.all-flights-tbody tr {
   padding-inline: 1.2em;
+}
+
+.td-center {
+  text-align: center;
+}
+
+.all-flights-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+
+  padding: 0;
 }
 
 /* Add Flight View */
 
+.main-add-flights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  
+  height: 100%;
+  width: 100%;
+}
+
+.content-container-add {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.content-body-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100%;
+  width: 100%;
+
+  margin-block-end: 0;
+  
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
 .add-flight-forum {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
   gap: 1em;
-
+  
   height: 100%;
-  width: 100%;
+  width: 75%;
 
-  margin-top: 1em;
+  padding: 10em 1em;
 }
 
 .add-flight-label {
   font-size: 1.5em;
-  /* align-self: flex-start; */
 }
 
 .add-flight-input {
@@ -163,16 +229,19 @@ main {
   color: white;
 }
 
+/* Styling Date Picker */
 input[type="datetime-local" i] {
-  align-items: center;
   display: inline-flex;
+  align-items: center;
+
   font-family: inherit;
-  padding: 1.5em 1em;
   font-size: 1em;
+  
+  padding: 1.5em 1em;
+  
   cursor: default;
   overflow: hidden;
 }
-
 
 .add-flight-input > option {
   background: rgb(0, 0, 0);
@@ -183,17 +252,28 @@ input[type="datetime-local" i] {
   filter: invert(1);
 }
 
+/* Ticket Styling */
+.add-flight-t-label {
+  font-size: 1.2em;
+}
+
 .add-flight-ticket {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   
   gap: 1em;
   width: 45%;
 }
 
 .add-flight-ticket > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+
   width: 100%
 }
 
@@ -206,4 +286,146 @@ input[type="datetime-local" i] {
   padding: .5em 1em;
 
   color: white;
+}
+
+.add-flight-submit-b {
+  background: rgba(0, 0, 0, 0.397);
+  
+  color: white;
+  cursor: pointer;
+  padding: .5em 1em;
+  align-self: center;
+  width: 100%
+}
+
+.add-flight-submit-b:hover {
+  background: rgb(255, 255, 255);
+  color: black
+}
+
+/* Show Flights View */
+
+.show-flight-table {
+  height: 50%;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  overflow: scroll;
+}
+
+
+.show-flight-table > * {
+}
+
+.show-flight-table th {
+  padding: 2em 1.2em;
+  border-bottom: 1px solid white;
+}
+
+.show-flight-table td {
+  padding: 2em 1.2em;
+}
+
+.show-flight-tbody tr {
+  padding-inline: 1.2em;
+}
+
+.td-center {
+  text-align: center;
+}
+
+.show-flight-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.show-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+
+  height: 50%;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  font-size: 1.5em;
+}
+
+.show-add-food {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  gap: 1em;
+}
+
+.food-forum {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  height: 2em;
+  width: 8em;
+}
+
+.food-dropdown {
+  background: rgba(255, 251, 251, 0.87);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  height: 100%;
+  width: 100%;
+}
+
+
+/* MEALSSSSS */
+
+.content-body-meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100%;
+  width: 100%;
+
+  margin-block-end: 0;
+  
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-size: .8em;
 }

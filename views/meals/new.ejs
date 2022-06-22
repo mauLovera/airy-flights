@@ -1,0 +1,27 @@
+<title>Create Food - Airy</title>
+<%- include("../partials/1-head") %> 
+<%- include("../partials/2-nav") %>
+<main>
+  <div class="main-add-flights">
+    <div class="content-container-add">
+      <div class="content-header">
+        <div class="content-header-title">Create Food</div>
+      </div>
+      <div class="content-body-meal">
+        <p>Please first ensure that the Meal is not in the dropdown
+          <select>
+            <% meals.forEach(function(meal) { %>
+              <option><%= meal.name %></option>
+            <% }) %>
+          </select>
+        </p>
+        <form id="add-performer-form" action="/meals" method="POST">
+          <label for="name-input">Food:</label>
+          <input type="text" name="name" id="name-input">
+          <button type="submit">Add Meal</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>  
+<%- include("../partials/3-footer") %> 

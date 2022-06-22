@@ -16,20 +16,38 @@
                 <th>Ariving</th>
                 <th>Flight #</th>
                 <th>Departure Time</th>
-                <th>Ticket</th>
+                <th>Seat</th>
+                <th>Details</th>
+                <th>Delete</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="all-flight-tbody">
               <% flights.forEach(flight => { %>
-                <tr>
+                <tr class="td-center">
                   <td><%= flight.airline %></td>
                   <td><%= flight.airportDep %></td>
                   <td><%= flight.airportArr %></td>
                   <td><%= flight.flightNo %></td>
                   <td><%= flight.departTime %></td>
-                  <td><%= flight.tickets %></td>
-                <td><a href="/flights/<%= flight._id %>"><i class="fa-solid fa-list"></i></a></td>
-                <td><button><i class="fa-solid fa-delete-left"></i></button></td>
+                  <% flight.tickets.forEach(ticket => { %>
+                    <td><%= ticket.seat %></td>
+                  <% }) %> 
+                <td>
+                  <a href="/flights/<%= flight._id %>">
+                    <i class="fa-solid fa-list"></i>
+                  </a>
+                </td>
+                <td>
+                  <form 
+                    style="margin: 0;"
+                    action="/flights/<%= flight._id %>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button class="all-flights-button">
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                  </form>
+                </td>
               </tr>
               <% }) %>
             </tbody>

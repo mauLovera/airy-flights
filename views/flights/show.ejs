@@ -1,0 +1,80 @@
+<title>Show Flight - Airy</title>
+<%- include("../partials/1-head") %>
+<%- include("../partials/2-nav") %>
+  <main>
+    <div class="main-all-flights">
+      <div class="content-container">
+        <div class="content-header">
+          <div class="content-header-title">Flights Details</div>
+        </div>
+        <div class="content-body">
+          <table class="show-flight-table">
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Departing</th>
+                <th>Ariving</th>
+                <th>Flight #</th>
+                <th>Departure Time</th>
+                <th>Seat</th>
+                <th>Price</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="show-flight-tbody">
+              <tr class="td-center">
+                <td><%= flight.airline %></td>
+                <td><%= flight.airportDep %></td>
+                <td><%= flight.airportArr %></td>
+                <td><%= flight
+                .flightNo %></td>
+                <td><%= flight.departTime %></td>
+                <% flight.tickets.forEach(ticket => { %>
+                  <td><%= ticket.seat %></td>
+                  <td>$<%= ticket.price %></td>
+                <% }) %> 
+                <td>
+                  <form 
+                    style="margin: 0;"
+                    action="/flights/<%= flight._id %>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button class="all-flights-button">
+                      <i class="fa-solid fa-x"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="show-details">
+            <div>
+              <a href="/flights/<%= flight._id %>/edit">Edit Flight/Ticket</a>
+            </div>
+            <div class="show-add-food">
+              Current Food:
+              <div>
+                <ul>
+                  <% flight.meal.forEach(meal => { %>
+                    <li><%= meal.name %></li>
+                  <% }) %> 
+                </ul>
+              </div>
+            </div>
+            <div class="show-add-food">
+              Add Food:
+              <form action="/flights/<%= flight._id %>" method="POST">
+                <select name="mealId">
+                  <% meals.forEach(meal => { %>
+                    <option value="<%= meal._id %>"><%= meal.name %> </option>
+                  <% }) %>
+                </select>
+                <button type="submit">Add to Current Food</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main> 
+<%- include("../partials/3-footer") %> 
