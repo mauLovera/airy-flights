@@ -1,4 +1,52 @@
 <title>Add Flight - Airy</title>
 <%- include("../partials/1-head") %> 
-<%- include("../partials/2-nav") %> 
+<%- include("../partials/2-nav") %>
+<main>
+  <div class="main-all-flights">
+    <div class="content-container">
+      <div class="content-header">
+        <div class="content-header-title">Add Flight</div>
+      </div>
+      <div class="content-body">
+        <form class="add-flight-forum">
+          <label class="add-flight-label" for="">Airline</label>
+          <select class="add-flight-input" type="text">
+            <option value="Airline">American</option>
+            <option value="Southwest">Southwest</option>
+            <option value="United">United</option>
+          </select> 
+          <label class="add-flight-label" for="">Departing Airport</label>
+          <select class="add-flight-input" type="text">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="DEN">SAN</option>
+            <option value="DEN">LAX</option>
+          </select>
+          <label class="add-flight-label" for="">Ariving Airport</label>
+          <select class="add-flight-input" type="text">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="DEN">SAN</option>
+            <option value="DEN">LAX</option>
+          </select>
+          <label class="add-flight-label" for="">Flight Number</label> 
+          <input class="add-flight-input" type="text">
+          <label class="add-flight-label" for="">Departure Time</label>
+          <input class="add-flight-input add-flight-date" type="datetime-local">
+          <label class="add-flight-label" for="">Ticket</label>
+          <div class="add-flight-ticket">
+            <div>
+              <input class="add-flight-t-input" type="text">
+            </div>
+            <div>
+              <input class="add-flight-t-input" type="text">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>  
 <%- include("../partials/3-footer") %> 

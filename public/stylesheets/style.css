@@ -19,9 +19,9 @@ a {
 
 body {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 
   height: 100vh;
   width: 100vw;
@@ -35,6 +35,8 @@ body {
   
   margin: 0;
 }
+
+/* Nav */
 
 nav {
   display: flex;
@@ -60,5 +62,148 @@ nav {
 }
 
 .nav-links {
+  /*  */
+}
+
+/* Main */
+
+main {
+  height: 80vh;
+  width: 95vw;
+
+  padding-inline: .5em;
+  border-bottom: 1px solid white;
+}
+
+/* All Flights */
+.main-all-flights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+}
+
+.content-container {
+  height: 90%;
+  width: 95%;
+}
+
+.content-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 15%;
+  width: 100%;
+
+  padding-inline: 1em;
+  border-bottom: 1px solid white;
+}
+
+.content-header-title {
+  font-size: 2em;
+}
+
+.content-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  height: 85%;
+  width: 100%;
+
+  padding: 1em;
+}
+
+/* All Flights View */
+
+.all-flights-table {
+
+}
+
+.all-flights-table th {
+  padding-inline: 1.2em;
+}
+
+.all-flights-table td {
+  padding-inline: 1.2em;
+}
+
+/* Add Flight View */
+
+.add-flight-forum {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1em;
+
+  height: 100%;
+  width: 100%;
+
+  margin-top: 1em;
+}
+
+.add-flight-label {
+  font-size: 1.5em;
+  /* align-self: flex-start; */
+}
+
+.add-flight-input {
+  background: rgba(0, 0, 0, 0.397);
+
+  width: 45%;
+
+  border: 1px solid white;
+  padding: .5em 1em;
+
+  color: white;
+}
+
+input[type="datetime-local" i] {
+  align-items: center;
+  display: inline-flex;
+  font-family: inherit;
+  padding: 1.5em 1em;
+  font-size: 1em;
+  cursor: default;
+  overflow: hidden;
+}
+
+
+.add-flight-input > option {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.add-flight-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
   
+  gap: 1em;
+  width: 45%;
+}
+
+.add-flight-ticket > div {
+  width: 100%
+}
+
+.add-flight-t-input {
+  background: rgba(0, 0, 0, 0.397);
+
+  width: 100%;
+
+  border: 1px solid white;
+  padding: .5em 1em;
+
+  color: white;
 }

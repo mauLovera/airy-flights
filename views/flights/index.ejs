@@ -1,4 +1,41 @@
 <title>All Flights - Airy</title>
 <%- include("../partials/1-head") %>
-<%- include("../partials/2-nav") %> 
+<%- include("../partials/2-nav") %>
+  <main>
+    <div class="main-all-flights">
+      <div class="content-container">
+        <div class="content-header">
+          <div class="content-header-title">Flights List</div>
+        </div>
+        <div class="content-body">
+          <table class="all-flights-table">
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Departing</th>
+                <th>Ariving</th>
+                <th>Flight #</th>
+                <th>Departure Time</th>
+                <th>Ticket</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% flights.forEach(flight => { %>
+                <tr>
+                  <td><%= flight.airline %></td>
+                  <td><%= flight.airportDep %></td>
+                  <td><%= flight.airportArr %></td>
+                  <td><%= flight.flightNo %></td>
+                  <td><%= flight.departTime %></td>
+                  <td><%= flight.tickets %></td>
+                <td><a href="/flights/<%= flight._id %>"><i class="fa-solid fa-list"></i></a></td>
+                <td><button><i class="fa-solid fa-delete-left"></i></button></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main> 
 <%- include("../partials/3-footer") %> 

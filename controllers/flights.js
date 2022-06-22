@@ -4,8 +4,10 @@ import {Flight} from "../models/flight.js"
 // display all the flights
 function index(req, res) {
   Flight.find({})
-  .then(flight => {
-    res.render('flights')
+  .then(flights => {
+    res.render('flights', {
+      flights,
+    })
   })
   .catch(err => {
     console.log(err)
@@ -17,7 +19,9 @@ function index(req, res) {
 function newFlight(req, res) {
   Flight.find({})
   .then(flight => {
-    res.render('flights/new')
+    res.render('flights/new', {
+      flight
+    })
   })
   .catch(err => {
     console.log(err)
